@@ -40,7 +40,7 @@ public class Mapgeneration : MonoBehaviour
     void Start()
     {
         camera = Camera.main.gameObject;
-        //PlayerPosition = Player.transform;
+        PlayerPosition = Player.transform;
         //  マップのすべてを壁で生成させるためのループ
         for (int i = 0; i < width; i++) //  横幅(X座標)のループ
         {
@@ -102,7 +102,7 @@ public class Mapgeneration : MonoBehaviour
         Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, 0.0f), Quaternion.identity);   //  道を生成
         pointX = positionX;
         pointY = positionY;
-        //PlayerPosition.transform.position = new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, 0.0f);
+        PlayerPosition.transform.position = new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, 0.0f);
         camera.transform.position = new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, -10.0f);
         //Debug.Log(positionX + "," + positionY);
         CreateMap();    //  一本道を生成する関数

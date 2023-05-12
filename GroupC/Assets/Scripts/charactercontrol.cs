@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class charactercontrol : MonoBehaviour
 {
-    private new SpriteRenderer renderer;
     public GameObject Front;
     public GameObject Leftf;
     public GameObject Right;
     public GameObject Back;
+
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
         Front.gameObject.SetActive(true);
         Leftf.gameObject.SetActive(false);
         Right.gameObject.SetActive(false);
@@ -22,7 +21,6 @@ public class charactercontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 position = transform.position;
         //主人公の移動
         //キーボードのAを押すと左に動く
         if (Input.GetKey(KeyCode.A))
@@ -31,8 +29,7 @@ public class charactercontrol : MonoBehaviour
             Leftf.gameObject.SetActive(true);
             Right.gameObject.SetActive(false);
             Back.gameObject.SetActive(false);
-            transform.Translate(-0.03f, 0.0f, 0.0f);
-            renderer.flipX = true;
+            transform.Translate(-5f * Time.deltaTime, 0.0f, 0.0f);
         }
         //キーボードのDを押すと右に動く
         else if (Input.GetKey(KeyCode.D))
@@ -41,8 +38,7 @@ public class charactercontrol : MonoBehaviour
             Leftf.gameObject.SetActive(false);
             Right.gameObject.SetActive(true);
             Back.gameObject.SetActive(false);
-            transform.Translate(0.03f, 0.0f, 0.0f);
-            renderer.flipX = false;
+            transform.Translate(5f * Time.deltaTime, 0.0f, 0.0f);
         }
         //キーボードのWを押すと上に動く
         else if (Input.GetKey(KeyCode.W))
@@ -51,8 +47,7 @@ public class charactercontrol : MonoBehaviour
             Leftf.gameObject.SetActive(false);
             Right.gameObject.SetActive(false);
             Back.gameObject.SetActive(true);
-            transform.Translate(0.0f, 0.3f, 0.0f);
-            renderer.flipY = true;
+            transform.Translate(0.0f, 5f * Time.deltaTime, 0.0f);
         }
         //キーボードのSを押すと下に動く
         else if (Input.GetKey(KeyCode.S))
@@ -61,8 +56,7 @@ public class charactercontrol : MonoBehaviour
             Leftf.gameObject.SetActive(false);
             Right.gameObject.SetActive(false);
             Back.gameObject.SetActive(false);
-            transform.Translate(0.0f, -0.3f, 0.0f);
-            renderer.flipY = false;
+            transform.Translate(0.0f, -5f * Time.deltaTime, 0.0f);
         }
     }
 
