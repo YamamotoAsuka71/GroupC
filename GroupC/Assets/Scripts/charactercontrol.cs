@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class charactercontrol : MonoBehaviour
 {
-    private SpriteRenderer renderer;
+    private new SpriteRenderer renderer;
     // Start is called before the first frame update
     void Start()
     {
