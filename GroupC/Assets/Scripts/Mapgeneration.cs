@@ -34,13 +34,13 @@ public class Mapgeneration : MonoBehaviour
     public GameObject Road; //  道となるマップチップを保存するための場所
     public GameObject Goal; //  ゴールとなるマップチップを保存するための場所
     public GameObject Player;
+    public Transform PlayerPosition;
     public GameObject Enemy;
-    public GameObject Mist;
-    public GameObject Area;
     public new GameObject camera;
     void Start()
     {
         camera = Camera.main.gameObject;
+        //PlayerPosition = Player.transform;
         //  マップのすべてを壁で生成させるためのループ
         for (int i = 0; i < width; i++) //  横幅(X座標)のループ
         {
@@ -102,9 +102,7 @@ public class Mapgeneration : MonoBehaviour
         Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, 0.0f), Quaternion.identity);   //  道を生成
         pointX = positionX;
         pointY = positionY;
-        //Instantiate(Player, new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, 0.0f), Quaternion.identity);
-        Instantiate(Mist, new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, 0.0f), Quaternion.identity);
-        Instantiate(Area, new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, 0.0f), Quaternion.identity);
+        //PlayerPosition.transform.position = new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, 0.0f);
         camera.transform.position = new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, -10.0f);
         //Debug.Log(positionX + "," + positionY);
         CreateMap();    //  一本道を生成する関数
