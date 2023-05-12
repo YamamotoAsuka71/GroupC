@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 485512557}
+  - component: {fileID: 485512558}
   m_Layer: 0
   m_Name: MapGeneration
   m_TagString: Untagged
@@ -154,6 +155,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &485512558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485512555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3801637fd41ab354e808470e6fda613f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionX: 0
+  positionY: 0
+  pointX: 0
+  pointY: 0
+  flg: 0
+  Num: 500
+  Num2: 250
+  Wall: {fileID: 1001684490663902627, guid: 70323f2e7af6abc46b05358763c7d441, type: 3}
+  Road: {fileID: 2622674948143557829, guid: d6cb5ab2ce77d1d479af792013b9b4a3, type: 3}
+  Goal: {fileID: 7825076044150103135, guid: dd2659c431cf60d47a342cc46ca1312a, type: 3}
+  Player: {fileID: 0}
+  Enemy: {fileID: 0}
+  Mist: {fileID: 4389717264556292889, guid: 1f62289b36dfce74ead593f33a78e61e, type: 3}
+  Area: {fileID: 6336768708497886408, guid: d98470d8ff836224dbe2e75f9935b6de, type: 3}
+  camera: {fileID: 1970895269}
 --- !u!1 &1970895269
 GameObject:
   m_ObjectHideFlags: 0
