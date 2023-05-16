@@ -22,8 +22,7 @@ public class charactercontrol : MonoBehaviour
         Right.gameObject.SetActive(false);
         Back.gameObject.SetActive(false);
         Instantiate(Arrow, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.Euler(0f, 0f, 90f));
-        Arrow.name = "arrow";
-        arrow = GameObject.Find("arrow(Clone)");
+        arrow = GameObject.Find("Arrow(Clone)");
     }
 
     // Update is called once per frame
