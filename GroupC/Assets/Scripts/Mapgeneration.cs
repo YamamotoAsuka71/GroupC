@@ -5,8 +5,8 @@ using UnityEngine;
 public class Mapgeneration : MonoBehaviour
 {
     const int size = 5;
-    const int width = 17;   //  マップの横幅
-    const int height = 17;  //  マップの縦幅
+    const int width = 13;   //  マップの横幅
+    const int height = 13;  //  マップの縦幅
     int[,] map = new int[width, height];    //  マップ上で壁か道かを判別するための二次配列
     const int wall = 1; //  壁だった場合の判別するための値
     const int road = 0; //  道だった場合の判別するための値
@@ -16,7 +16,7 @@ public class Mapgeneration : MonoBehaviour
     public int pointX;
     public int pointY;
 
-    int[] PositionNum = { 2, 4, 6, 8, 10, 12, 14 }; //  偶数の座標
+    int[] PositionNum = { 2, 4, 6, 8, 10 }; //  偶数の座標
 
     public bool flg = false;    //  道が生成できるかどうかの判別フラグ
 
@@ -67,7 +67,7 @@ public class Mapgeneration : MonoBehaviour
             }
         }
         positionX = 2;  //  初期生成X座標
-        positionY = 14; //  初期生成Y座標
+        positionY = 10; //  初期生成Y座標
         /*positionX = Random.Range(4, width - 4);
         if (positionX % 2 != 0)
         {
@@ -107,6 +107,7 @@ public class Mapgeneration : MonoBehaviour
         //Debug.Log(positionX + "," + positionY);
         CreateMap();    //  一本道を生成する関数
         Instantiate(Goal, new Vector3((positionX * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, 0.0f), Quaternion.identity);   //  ゴールを生成
+        Goal.name = "Goal";
         CreateRoad();   //  分かれ道を生成する関数
     }
     void CreateMap()
@@ -252,14 +253,14 @@ public class Mapgeneration : MonoBehaviour
         {
             if (Num2 > 0)   //  ループを数えるカウントが0より大きい場合実行
             {
-                int x = Random.Range(0, 7); //  偶数のマスをランダムに抽選
-                int y = Random.Range(0, 7); //  偶数のマスをランダムに抽選
+                int x = Random.Range(0, 5); //  偶数のマスをランダムに抽選
+                int y = Random.Range(0, 5); //  偶数のマスをランダムに抽選
                 if (map[PositionNum[x], PositionNum[y]] != road)    //  ランダムに抽選した座標が道ではなかった場合に実行
                 {
                     while (map[PositionNum[x], PositionNum[y]] != road)    //  ランダムに抽選した座標が道ではなかった場合にループさせる
                     {
-                        x = Random.Range(0, 7); //  もう一度偶数のマスをランダムに抽選
-                        y = Random.Range(0, 7); //  もう一度偶数のマスをランダムに抽選
+                        x = Random.Range(0, 5); //  もう一度偶数のマスをランダムに抽選
+                        y = Random.Range(0, 5); //  もう一度偶数のマスをランダムに抽選
                     }
                 }
                 else　  //   ランダムに抽選した座標が道だった場合に実行
