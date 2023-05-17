@@ -6,14 +6,16 @@ public class Arrow : MonoBehaviour
 {
     [SerializeField] private Transform arrow;
     private GameObject player;
-    private GameObject goal;
+    public GameObject goal;
+    public GameObject playerObjct;
+    Transform playerTransform;
     void Start()
     {
-
+        playerTransform = playerObjct.transform;
     }
     void Update()
     {
-        goal = GameObject.Find("Goal(Clone)");
+        transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, transform.position.z);
         Vector3 toDirection = goal.transform.position - transform.position;
         // ëŒè€ï®Ç÷âÒì]Ç∑ÇÈ
         transform.rotation = Quaternion.FromToRotation(Vector3.up, toDirection);

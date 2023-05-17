@@ -9,10 +9,9 @@ public class charactercontrol : MonoBehaviour
     public GameObject Right;
     public GameObject Back;
     public GameObject Medicine;
-    public GameObject Arrow;
+    public GameObject arrow;
     float timer;
     float timer2;
-    private GameObject arrow;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +20,6 @@ public class charactercontrol : MonoBehaviour
         Leftf.gameObject.SetActive(false);
         Right.gameObject.SetActive(false);
         Back.gameObject.SetActive(false);
-        Instantiate(Arrow, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.Euler(0f, 0f, 90f));
-        arrow = GameObject.Find("Arrow(Clone)");
     }
 
     // Update is called once per frame
@@ -35,17 +32,17 @@ public class charactercontrol : MonoBehaviour
             Instantiate(Medicine, new Vector3(transform.position.x, transform.position.y, 0.0f), Quaternion.identity);
             timer = 0;
         }
-        if (timer2 <= 3)
+        if (timer2 <= 4)
         {
             arrow.gameObject.SetActive(true);
         }
-        else if (timer2 <= 8)
+        else if (timer2 <= 9)
         {
             arrow.gameObject.SetActive(false);
         }
         else
         {
-            timer2 = 0;
+            timer2 = 1;
         }
         //主人公の移動
         //キーボードのAを押すと左に動く

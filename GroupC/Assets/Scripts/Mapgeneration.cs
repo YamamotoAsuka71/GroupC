@@ -13,6 +13,9 @@ public class Mapgeneration : MonoBehaviour
     public int positionX;   //  X座標
     public int positionY;   //  Y座標
 
+    public int GoalPositionX;
+    public int GoalPositionY;
+
     public int pointX;
     public int pointY;
 
@@ -106,8 +109,8 @@ public class Mapgeneration : MonoBehaviour
         camera.transform.position = new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, -10.0f);
         //Debug.Log(positionX + "," + positionY);
         CreateMap();    //  一本道を生成する関数
-        Instantiate(Goal, new Vector3((positionX * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, 0.0f), Quaternion.identity);   //  ゴールを生成
-        Goal.name = "Goal";
+        GoalPositionX = positionX;
+        GoalPositionY = positionY;
         CreateRoad();   //  分かれ道を生成する関数
     }
     void CreateMap()
