@@ -5,8 +5,11 @@ using UnityEngine;
 public class Mapgeneration : MonoBehaviour
 {
     const int size = 5;
+    public int Size = 5;
     const int width = 13;   //  マップの横幅
     const int height = 13;  //  マップの縦幅
+    public int Width = 13;
+    public int Height = 13;
     int[,] map = new int[width, height];    //  マップ上で壁か道かを判別するための二次配列
     const int wall = 1; //  壁だった場合の判別するための値
     const int road = 0; //  道だった場合の判別するための値
