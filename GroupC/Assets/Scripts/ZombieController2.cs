@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ZombieController : MonoBehaviour
+public class ZombieController2 : MonoBehaviour
 {
-    [SerializeField] Mapgeneration mapgeneration;
     [SerializeField] Life life;
+    [SerializeField] Mapgeneration mapgeneration;
     public GameObject Front;
     public GameObject Left;
     public GameObject Right;
@@ -21,11 +21,11 @@ public class ZombieController : MonoBehaviour
     void Start()
     {
         Front.SetActive(false);
-        Left.SetActive(false);
+        Left.SetActive(true);
         Right.SetActive(false);
-        Back.SetActive(true);
+        Back.SetActive(false);
         transform.position = new Vector3((10 * mapgeneration.Size) - (mapgeneration.Width * mapgeneration.Size) / 2, (2 * mapgeneration.Size) - (mapgeneration.Height * mapgeneration.Size) / 2, 0.0f);
-        direction[0] = true;
+        direction[2] = true;
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class ZombieController : MonoBehaviour
                 Y *= Speed;
                 Vector3 pos = transform.position;
                 transform.position = new Vector3(pos.x += X, pos.y += Y, 0.0f);
-                if (Mathf.Abs(Mathf.Sqrt((transform.position.x + 1.0f) - (transform.position.x) + (transform.position.y + 1.0f) - (transform.position.y))) >= Mathf.Abs(Mathf.Sqrt((Player.transform.position.x) - (transform.position.x) + (Player.transform.position.y) - (transform.position.y))))
+                if(Mathf.Abs(Mathf.Sqrt((transform.position.x + 1.0f) - (transform.position.x) + (transform.position.y + 1.0f) - (transform.position.y))) >= Mathf.Abs(Mathf.Sqrt((Player.transform.position.x) - (transform.position.x) + (Player.transform.position.y) - (transform.position.y))))
                 {
                     if (timer >= 1.0f)
                     {
@@ -79,7 +79,7 @@ public class ZombieController : MonoBehaviour
                 }
                 else
                 {
-                    direction[2] = true;
+                    direction[3] = true;
                     Back.SetActive(false);
                     direction[0] = false;
                 }
@@ -121,7 +121,7 @@ public class ZombieController : MonoBehaviour
                 }
                 else
                 {
-                    direction[0] = true;
+                    direction[2] = true;
                     Right.SetActive(false);
                     direction[3] = false;
                 }
