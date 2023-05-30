@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalPoints : MonoBehaviour
 {
@@ -25,5 +26,12 @@ public class GoalPoints : MonoBehaviour
     void PositionMove()
     {
         transform.position = new Vector3((mapgeneration.GoalPositionX * 5) - (13 * 5) / 2, (mapgeneration.GoalPositionY * 5) - (13 * 5) / 2, 0.0f);   //  ÉSÅ[ÉãÇê∂ê¨
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("Description4");
+        }
     }
 }
