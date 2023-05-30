@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ZombieController : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class ZombieController : MonoBehaviour
         Debug.Log(Count);
         if (Count == 0)
         {
-            Debug.Log("GameOver");
+            SceneManager.LoadScene("New Scene");
         }
         if (Mathf.Abs(Mathf.Sqrt((transform.position.x + 3.0f) - (transform.position.x) + (transform.position.y + 3.0f) - (transform.position.y))) >= Mathf.Abs(Mathf.Sqrt((Player.transform.position.x) - (transform.position.x) + (Player.transform.position.y) - (transform.position.y))))
         {
