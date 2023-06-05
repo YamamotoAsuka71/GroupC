@@ -24,7 +24,7 @@ public class ZombieController2 : MonoBehaviour
         Left.SetActive(true);
         Right.SetActive(false);
         Back.SetActive(false);
-        transform.position = new Vector3((10 * mapgeneration.Size) - (mapgeneration.Width * mapgeneration.Size) / 2, (2 * mapgeneration.Size) - (mapgeneration.Height * mapgeneration.Size) / 2, 0.0f);
+        transform.position = new Vector3((10 * mapgeneration.Size) - (mapgeneration.Width * mapgeneration.Size) / 2, (2 * mapgeneration.Size) - (mapgeneration.Height * mapgeneration.Size) / 2, -4.0f);
         direction[2] = true;
     }
 
@@ -53,7 +53,7 @@ public class ZombieController2 : MonoBehaviour
                 X *= Speed;
                 Y *= Speed;
                 Vector3 pos = transform.position;
-                transform.position = new Vector3(pos.x += X, pos.y += Y, 0.0f);
+                transform.position = new Vector3(pos.x += X, pos.y += Y, -4.0f);
                 if(Mathf.Abs(Mathf.Sqrt((transform.position.x + 1.0f) - (transform.position.x) + (transform.position.y + 1.0f) - (transform.position.y))) >= Mathf.Abs(Mathf.Sqrt((Player.transform.position.x) - (transform.position.x) + (Player.transform.position.y) - (transform.position.y))))
                 {
                     if (timer >= 1.0f)
@@ -75,7 +75,7 @@ public class ZombieController2 : MonoBehaviour
                 Back.SetActive(true);
                 if (transform.position.y < (10 * mapgeneration.Size) - (mapgeneration.Height * mapgeneration.Size) / 2)
                 {
-                    transform.Translate(0.0f, 4.0f * Time.deltaTime, 0.0f);
+                    transform.Translate(0.0f, 4.0f * Time.deltaTime, -4.0f);
                 }
                 else
                 {
@@ -89,7 +89,7 @@ public class ZombieController2 : MonoBehaviour
                 Left.SetActive(true);
                 if (transform.position.x > (2 * mapgeneration.Size) - (mapgeneration.Height * mapgeneration.Size) / 2)
                 {
-                    transform.Translate(-4.0f * Time.deltaTime, 0.0f, 0.0f);
+                    transform.Translate(-4.0f * Time.deltaTime, 0.0f, -4.0f);
                 }
                 else
                 {
@@ -103,7 +103,7 @@ public class ZombieController2 : MonoBehaviour
                 Front.SetActive(true);
                 if (transform.position.y > (2 * mapgeneration.Size) - (mapgeneration.Height * mapgeneration.Size) / 2)
                 {
-                    transform.Translate(0.0f, -4.0f * Time.deltaTime, 0.0f);
+                    transform.Translate(0.0f, -4.0f * Time.deltaTime, -4.0f);
                 }
                 else
                 {
@@ -117,7 +117,7 @@ public class ZombieController2 : MonoBehaviour
                 Right.SetActive(true);
                 if (transform.position.x < (10 * mapgeneration.Size) - (mapgeneration.Height * mapgeneration.Size) / 2)
                 {
-                    transform.Translate(4.0f * Time.deltaTime, 0.0f, 0.0f);
+                    transform.Translate(4.0f * Time.deltaTime, 0.0f, -4.0f);
                 }
                 else
                 {

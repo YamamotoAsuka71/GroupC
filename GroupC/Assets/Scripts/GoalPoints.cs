@@ -25,9 +25,9 @@ public class GoalPoints : MonoBehaviour
     }
     void PositionMove()
     {
-        transform.position = new Vector3((mapgeneration.GoalPositionX * 5) - (13 * 5) / 2, (mapgeneration.GoalPositionY * 5) - (13 * 5) / 2, 0.0f);   //  ÉSÅ[ÉãÇê∂ê¨
+        transform.position = new Vector3((mapgeneration.GoalPositionX * 5) - (13 * 5) / 2, (mapgeneration.GoalPositionY * 5) - (13 * 5) / 2, transform.position.z);   //  ÉSÅ[ÉãÇê∂ê¨
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {

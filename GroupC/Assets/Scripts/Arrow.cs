@@ -15,7 +15,7 @@ public class Arrow : MonoBehaviour
     }
     void Update()
     {
-        transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, transform.position.z);
+        transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, 5.0f);
         Vector3 toDirection = goal.transform.position - transform.position;
         // ëŒè€ï®Ç÷âÒì]Ç∑ÇÈ
         transform.rotation = Quaternion.FromToRotation(Vector3.up, toDirection);

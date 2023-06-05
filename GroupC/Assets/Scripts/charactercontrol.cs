@@ -16,7 +16,6 @@ public class charactercontrol : MonoBehaviour
     float timer2;
     float MaxStamina = 6;
     float NowStamina;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +34,7 @@ public class charactercontrol : MonoBehaviour
         timer2 += Time.deltaTime;
         if (timer >= 3.0f)
         {
-            Instantiate(Medicine, new Vector3(transform.position.x, transform.position.y, 0.0f), Quaternion.identity);
+            Instantiate(Medicine, new Vector3(transform.position.x, transform.position.y, -4.0f), Quaternion.identity);
             timer = 0;
         }
         if (timer2 <= 4)
@@ -58,7 +57,7 @@ public class charactercontrol : MonoBehaviour
                 Leftf.gameObject.SetActive(true);
                 Right.gameObject.SetActive(false);
                 Back.gameObject.SetActive(false);
-                transform.Translate(-10f * Time.deltaTime, 0.0f, 0.0f);
+                transform.Translate(-5f * Time.deltaTime, 0.0f, 0.0f);
                 NowStamina -= Time.deltaTime;
                 stamina.value = NowStamina / MaxStamina;
             }
@@ -69,9 +68,8 @@ public class charactercontrol : MonoBehaviour
                 Leftf.gameObject.SetActive(false);
                 Right.gameObject.SetActive(true);
                 Back.gameObject.SetActive(false);
-                transform.Translate(10f * Time.deltaTime, 0.0f, 0.0f);
+                transform.Translate(5f * Time.deltaTime, 0.0f, 0.0f);
                 NowStamina -= Time.deltaTime;
-                stamina.value = NowStamina / MaxStamina;
             }
             //キーボードのWを押すと上に動く
             else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
@@ -80,7 +78,7 @@ public class charactercontrol : MonoBehaviour
                 Leftf.gameObject.SetActive(false);
                 Right.gameObject.SetActive(false);
                 Back.gameObject.SetActive(true);
-                transform.Translate(0.0f, 10f * Time.deltaTime, 0.0f);
+                transform.Translate(0.0f, 5f * Time.deltaTime, 0.0f);
                 NowStamina -= Time.deltaTime;
                 stamina.value = NowStamina / MaxStamina;
             }
@@ -91,7 +89,7 @@ public class charactercontrol : MonoBehaviour
                 Leftf.gameObject.SetActive(false);
                 Right.gameObject.SetActive(false);
                 Back.gameObject.SetActive(false);
-                transform.Translate(0.0f, -10f * Time.deltaTime, 0.0f);
+                transform.Translate(0.0f, -5f * Time.deltaTime, 0.0f);
                 NowStamina -= Time.deltaTime;
                 stamina.value = NowStamina / MaxStamina;
             }
@@ -112,7 +110,7 @@ public class charactercontrol : MonoBehaviour
             Leftf.gameObject.SetActive(true);
             Right.gameObject.SetActive(false);
             Back.gameObject.SetActive(false);
-            transform.Translate(-5f * Time.deltaTime, 0.0f, 0.0f);
+            transform.Translate(-2.5f * Time.deltaTime, 0.0f, 0.0f);
         }
         //キーボードのDを押すと右に動く
         else if (Input.GetKey(KeyCode.D))
@@ -121,7 +119,7 @@ public class charactercontrol : MonoBehaviour
             Leftf.gameObject.SetActive(false);
             Right.gameObject.SetActive(true);
             Back.gameObject.SetActive(false);
-            transform.Translate(5f * Time.deltaTime, 0.0f, 0.0f);
+            transform.Translate(2.5f * Time.deltaTime, 0.0f, 0.0f);
         }
         //キーボードのWを押すと上に動く
         else if (Input.GetKey(KeyCode.W))
@@ -130,7 +128,7 @@ public class charactercontrol : MonoBehaviour
             Leftf.gameObject.SetActive(false);
             Right.gameObject.SetActive(false);
             Back.gameObject.SetActive(true);
-            transform.Translate(0.0f, 5f * Time.deltaTime, 0.0f);
+            transform.Translate(0.0f, 2.5f * Time.deltaTime, 0.0f);
         }
         //キーボードのSを押すと下に動く
         else if (Input.GetKey(KeyCode.S))
@@ -139,7 +137,7 @@ public class charactercontrol : MonoBehaviour
             Leftf.gameObject.SetActive(false);
             Right.gameObject.SetActive(false);
             Back.gameObject.SetActive(false);
-            transform.Translate(0.0f, -5f * Time.deltaTime, 0.0f);
+            transform.Translate(0.0f, -2.5f * Time.deltaTime, 0.0f);
         }
     }
 

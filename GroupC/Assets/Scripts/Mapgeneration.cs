@@ -53,7 +53,7 @@ public class Mapgeneration : MonoBehaviour
             for (int n = 0; n < height; n++)    //  縦幅(Y座標)のループ
             {
                 map[i, n] = wall;   //  生成した座標は壁と設定
-                Instantiate(Wall, new Vector3((i * size) - (width * size) / 2, (n * size) - (height * size) / 2, 0.0f), Quaternion.identity);   //  壁を生成
+                Instantiate(Wall, new Vector3((i * size) - (width * size) / 2, (n * size) - (height * size) / 2, -2.0f), Quaternion.identity);   //  壁を生成
                 //  生成したクローンにわかりやすいように名前を番号でつけるためのプログラム
                 if (n == height - 1)
                 {
@@ -105,10 +105,10 @@ public class Mapgeneration : MonoBehaviour
         map[positionX, positionY] = road;   //  初期生成ポジションを道として設定
         GameObject wall1 = GameObject.Find("Wall" + positionX.ToString() + "," + positionY.ToString() + "(Clone)"); //  道を生成した座標と同じ場所にある壁を探す
         Destroy(wall1); //  探した壁を破壊
-        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, 0.0f), Quaternion.identity);   //  道を生成
+        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, -0.5f), Quaternion.identity);   //  道を生成
         pointX = positionX;
         pointY = positionY;
-        PlayerPosition.transform.position = new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, 0.0f);
+        PlayerPosition.transform.position = new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, -4.0f);
         camera.transform.position = new Vector3((pointX * size) - (width * size) / 2, (pointY * size) - (height * size) / 2, -10.0f);
         //Debug.Log(positionX + "," + positionY);
         CreateMap();    //  一本道を生成する関数
@@ -136,8 +136,8 @@ public class Mapgeneration : MonoBehaviour
                         GameObject wall3 = GameObject.Find("Wall" + positionX.ToString() + "," + (positionY + 2).ToString() + "(Clone)");  //  最後に生成した道から上２マスの壁を探す
                         Destroy(wall2);    //  最後に生成した道から上１マスの壁を破壊
                         Destroy(wall3);    //  最後に生成した道から上２マスの壁を破壊
-                        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, ((positionY + 1) * size) - (height * size) / 2, 0.0f), Quaternion.identity); //  最後に生成した道から上１マスに道を生成
-                        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, ((positionY + 2) * size) - (height * size) / 2, 0.0f), Quaternion.identity); //  最後に生成した道から上２マスに道を生成
+                        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, ((positionY + 1) * size) - (height * size) / 2, -0.5f), Quaternion.identity); //  最後に生成した道から上１マスに道を生成
+                        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, ((positionY + 2) * size) - (height * size) / 2, -0.5f), Quaternion.identity); //  最後に生成した道から上２マスに道を生成
                         positionY = positionY + 2;  //  最後に生成した道のY座標を更新
                         //  方向のフラグをすべて初期化
                         for (int i = 0; i < 4; i++)
@@ -160,8 +160,8 @@ public class Mapgeneration : MonoBehaviour
                         GameObject wall3 = GameObject.Find("Wall" + positionX.ToString() + "," + (positionY - 2).ToString() + "(Clone)");  //  最後に生成した道から下２マスの壁を探す
                         Destroy(wall2);    //  最後に生成した道から下１マスの壁を破壊
                         Destroy(wall3);    //  最後に生成した道から下２マスの壁を破壊
-                        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, ((positionY - 1) * size) - (height * size) / 2, 0.0f), Quaternion.identity); //  最後に生成した道から下１マスに道を生成
-                        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, ((positionY - 2) * size) - (height * size) / 2, 0.0f), Quaternion.identity); //  最後に生成した道から下２マスに道を生成
+                        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, ((positionY - 1) * size) - (height * size) / 2, -0.5f), Quaternion.identity); //  最後に生成した道から下１マスに道を生成
+                        Instantiate(Road, new Vector3((positionX * size) - (width * size) / 2, ((positionY - 2) * size) - (height * size) / 2, -0.5f), Quaternion.identity); //  最後に生成した道から下２マスに道を生成
                         positionY = positionY - 2;  //  最後に生成した道のY座標を更新
                         //  方向のフラグをすべて初期化
                         for (int i = 0; i < 4; i++)
@@ -185,8 +185,8 @@ public class Mapgeneration : MonoBehaviour
                         GameObject wall3 = GameObject.Find("Wall" + (positionX + 2).ToString() + "," + positionY.ToString() + "(Clone)");  //  最後に生成した道から右２マスの壁を探す
                         Destroy(wall2);    //  最後に生成した道から右１マスの壁を破壊
                         Destroy(wall3);    //  最後に生成した道から右２マスの壁を破壊
-                        Instantiate(Road, new Vector3(((positionX + 1) * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, 0.0f), Quaternion.identity); //  最後に生成した道から右１マスに道を生成
-                        Instantiate(Road, new Vector3(((positionX + 2) * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, 0.0f), Quaternion.identity); //  最後に生成した道から右２マスに道を生成
+                        Instantiate(Road, new Vector3(((positionX + 1) * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, -0.5f), Quaternion.identity); //  最後に生成した道から右１マスに道を生成
+                        Instantiate(Road, new Vector3(((positionX + 2) * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, -0.5f), Quaternion.identity); //  最後に生成した道から右２マスに道を生成
                         positionX = positionX + 2;  //  最後に生成した道のX座標を更新
                         //  方向のフラグをすべて初期化
                         for (int i = 0; i < 4; i++)
@@ -209,8 +209,8 @@ public class Mapgeneration : MonoBehaviour
                         GameObject wall3 = GameObject.Find("Wall" + (positionX - 2).ToString() + "," + positionY.ToString() + "(Clone)");  //  最後に生成した道から左２マスの壁を探す
                         Destroy(wall2);    //  最後に生成した道から左１マスの壁を破壊
                         Destroy(wall3);    //  最後に生成した道から左２マスの壁を破壊
-                        Instantiate(Road, new Vector3(((positionX - 1) * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, 0.0f), Quaternion.identity); //  最後に生成した道から左１マスに道を生成
-                        Instantiate(Road, new Vector3(((positionX - 2) * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, 0.0f), Quaternion.identity); //  最後に生成した道から左２マスに道を生成
+                        Instantiate(Road, new Vector3(((positionX - 1) * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, -0.5f), Quaternion.identity); //  最後に生成した道から左１マスに道を生成
+                        Instantiate(Road, new Vector3(((positionX - 2) * size) - (width * size) / 2, (positionY * size) - (height * size) / 2, -0.5f), Quaternion.identity); //  最後に生成した道から左２マスに道を生成
                         positionX = positionX - 2;  //  最後に生成した道のX座標を更新
                         //  方向のフラグをすべて初期化
                         for (int i = 0; i < 4; i++)

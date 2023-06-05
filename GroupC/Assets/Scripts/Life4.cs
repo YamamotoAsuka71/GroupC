@@ -15,6 +15,6 @@ public class Life4 : MonoBehaviour
     void Update()
     {
         Vector3 pos = Player.transform.position;
-        transform.position = new Vector3(pos.x - 5.0f, pos.y + 4.3f, 0.0f);
+        transform.position = new Vector3(pos.x - 3.3f, pos.y + 2.5f, -5.0f);
     }
 }
