@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Explain : MonoBehaviour
+public class saisyo3 : MonoBehaviour
 {
     float timer = 0.0f;
     float timer2 = 0.0f;
@@ -16,7 +16,6 @@ public class Explain : MonoBehaviour
         flag = false;
         timer = 0.0f;
         timer2 = 0.0f;
-        GameManager.PlayCount++;
         animator = GetComponent<Animator>();
         animator.SetBool("SAISYO", true);
     }
@@ -38,7 +37,7 @@ public class Explain : MonoBehaviour
             timer2 += Time.deltaTime;
             if (timer2 > 1.0f)
             {
-                SceneManager.LoadScene("explain");
+                SceneManager.LoadScene("Main3d");
             }
         }
     }

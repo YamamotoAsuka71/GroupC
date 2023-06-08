@@ -16,7 +16,7 @@ public class START : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("Main5");
+            SceneManager.LoadScene("Main3D");
         }
     }
 }

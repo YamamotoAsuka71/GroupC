@@ -15,15 +15,39 @@ EditorBuildSettings:
     path: Assets/Scenes/Player.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Description2.unity
+    guid: 98e93b7ea9b69134ab5336c403ea7147
+  - enabled: 1
     path: Assets/Scenes/Description4.unity
     guid: 75298016a629ffc4eae5edaf849f0f06
   - enabled: 1
     path: Assets/Scenes/Main5.unity
     guid: bf041c47d12817c43b48db7a5d706339
   - enabled: 1
+    path: Assets/Scenes/Main3D.unity
+    guid: e7347378f6031b24b9a125b41e6b25fc
+  - enabled: 1
     path: Assets/Scenes/New Scene.unity
     guid: 2f2b50b6a7886c64bab34d2d34bef400
   - enabled: 1
     path: Assets/Scenes/Description6.unity
     guid: df21a1e9f85f73642868581ed6020442
+  - enabled: 1
+    path: Assets/Scenes/Description9.unity
+    guid: aa666eb08eb808a4b8fecec8e133ecc9
+  - enabled: 1
+    path: Assets/Scenes/Description8.unity
+    guid: f039284a659a2a34180fb40c6de9884d
+  - enabled: 1
+    path: Assets/Scenes/Description5.unity
+    guid: db8992a204dabfc46a95c350c276f7e8
+  - enabled: 1
+    path: Assets/Scenes/Description7.unity
+    guid: b1e9184b962939e4886215653233dd12
+  - enabled: 1
+    path: Assets/Scenes/Description1.unity
+    guid: 99524569b3cb5cc4e94310f8ebd5278f
+  - enabled: 1
+    path: Assets/Scenes/Description3.unity
+    guid: 7475989b9fdb6bb47bb88e6f21a0d588
   m_configObjects: {}

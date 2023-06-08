@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Explain : MonoBehaviour
+public class Description : MonoBehaviour
 {
     float timer = 0.0f;
     float timer2 = 0.0f;
     Animator animator;
     public bool flag = false;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +38,7 @@ public class Explain : MonoBehaviour
             timer2 += Time.deltaTime;
             if (timer2 > 1.0f)
             {
-                SceneManager.LoadScene("explain");
+                SceneManager.LoadScene("Main3d");
             }
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ZombieController : MonoBehaviour
 {
+    [SerializeField] saigo saigo;
     [SerializeField] charactercontrol charactercontrol;
     [SerializeField] Life life;
     public GameObject Front;
@@ -14,6 +15,7 @@ public class ZombieController : MonoBehaviour
     public GameObject Player;
     float timer = 0.0f;
     float timer2 = 0.0f;
+    float timer3 = 0.0f;
     bool flag = false;
     bool flag2 = false;
     float speed = 3;
@@ -37,22 +39,22 @@ public class ZombieController : MonoBehaviour
         PlayerPosition = Player.transform.position;
         EnemyPosition = transform.position;
         speed = speed * Time.deltaTime;
-        timer2 += Time.deltaTime;
-        if (timer2 >= 3.0f)
+        timer3 += Time.deltaTime;
+        if (timer3 >= 2.0f)
         {
-            flag2 = true;
+            timer2 += Time.deltaTime;
+            if (timer2 >= 1.0f)
+            {
+                flag2 = true;
+            }
+            timer += Time.deltaTime;
         }
-        timer += Time.deltaTime;
-        Debug.Log(life.Count);
+        //Debug.Log(life.Count);
         if (life.Count == 0)
         {
             GameManager.GameCount++;
-            switch (GameManager.GameCount)
-            {
-                case 6:
-                    SceneManager.LoadScene("Description6");
-                    break;
-            }
+            saigo.flag = true;
+            Destroy(gameObject);
         }
         if (timer >= 3 && timer < 3.5f)
         {
@@ -85,7 +87,7 @@ public class ZombieController : MonoBehaviour
             */
             if (PlayerPosition.x - EnemyPosition.x < 0 && Mathf.Abs(PlayerPosition.x - EnemyPosition.x) > Mathf.Abs(PlayerPosition.y - EnemyPosition.y))
             {
-                EnemyPosition.x = EnemyPosition.x - 3.0f * Time.deltaTime;
+                EnemyPosition.x = EnemyPosition.x - 4.75f * Time.deltaTime;
                 Left.SetActive(true);
                 Right.SetActive(false);
                 Back.SetActive(false);
@@ -93,7 +95,7 @@ public class ZombieController : MonoBehaviour
             }
             else if (PlayerPosition.x - EnemyPosition.x > 0 && Mathf.Abs(PlayerPosition.x - EnemyPosition.x) > Mathf.Abs(PlayerPosition.y - EnemyPosition.y))
             {
-                EnemyPosition.x = EnemyPosition.x + 3.0f * Time.deltaTime;
+                EnemyPosition.x = EnemyPosition.x + 4.75f * Time.deltaTime;
                 Left.SetActive(false);
                 Right.SetActive(true);
                 Back.SetActive(false);
@@ -101,7 +103,7 @@ public class ZombieController : MonoBehaviour
             }
             else if (PlayerPosition.y - EnemyPosition.y < 0 && Mathf.Abs(PlayerPosition.x - EnemyPosition.x) < Mathf.Abs(PlayerPosition.y - EnemyPosition.y))
             {
-                EnemyPosition.y = EnemyPosition.y - 3.0f * Time.deltaTime;
+                EnemyPosition.y = EnemyPosition.y - 4.75f * Time.deltaTime;
                 Left.SetActive(false);
                 Right.SetActive(false);
                 Back.SetActive(false);
@@ -109,7 +111,7 @@ public class ZombieController : MonoBehaviour
             }
             else if (PlayerPosition.y - EnemyPosition.y > 0 && Mathf.Abs(PlayerPosition.x - EnemyPosition.x) < Mathf.Abs(PlayerPosition.y - EnemyPosition.y))
             {
-                EnemyPosition.y = EnemyPosition.y + 3.0f * Time.deltaTime;
+                EnemyPosition.y = EnemyPosition.y + 4.75f * Time.deltaTime;
                 Left.SetActive(false);
                 Right.SetActive(false);
                 Back.SetActive(true);

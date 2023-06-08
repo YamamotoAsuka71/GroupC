@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class charactercontrol : MonoBehaviour
 {
+    [SerializeField] saigo saigo;
     public GameObject Front;
     public GameObject Leftf;
     public GameObject Right;
@@ -16,6 +17,7 @@ public class charactercontrol : MonoBehaviour
     float timer2;
     float MaxStamina = 6;
     float NowStamina;
+    float timer3 = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +32,12 @@ public class charactercontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer3 += Time.deltaTime;
         timer += Time.deltaTime;
-        timer2 += Time.deltaTime;
+        if (timer3 > 2.0f)
+        {
+            timer2 += Time.deltaTime;
+        }
         if (timer >= 3.0f)
         {
             Instantiate(Medicine, new Vector3(transform.position.x, transform.position.y, -4.0f), Quaternion.identity);
@@ -138,6 +144,13 @@ public class charactercontrol : MonoBehaviour
             Right.gameObject.SetActive(false);
             Back.gameObject.SetActive(false);
             transform.Translate(0.0f, -2.5f * Time.deltaTime, 0.0f);
+        }
+        if (saigo.flag == true)
+        {
+            Front.SetActive(false);
+            Right.SetActive(false);
+            Leftf.SetActive(false);
+            Back.SetActive(false);
         }
     }
 

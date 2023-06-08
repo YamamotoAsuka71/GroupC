@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GoalPoints : MonoBehaviour
 {
+    [SerializeField] saigo saigo;
     [SerializeField] Mapgeneration mapgeneration;
     float timer;
     // Start is called before the first frame update
@@ -31,7 +32,8 @@ public class GoalPoints : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Description4");
+            GameManager.GameCount--;
+            saigo.flag = true;
         }
     }
 }
