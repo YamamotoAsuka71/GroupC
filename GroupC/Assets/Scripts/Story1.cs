@@ -15,6 +15,10 @@ public class Story1 : MonoBehaviour
         textbox.text = "撃滅のセカンドブリット";
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         yield return null;
+
+        textbox.text = "撃滅";
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        yield return null;
     }
 
     // Update is called once per frame
