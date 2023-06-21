@@ -31,7 +31,7 @@ public class Chimera : MonoBehaviour
         Right.SetActive(false);
         Back.SetActive(false);
         transform.position = new Vector3(-22.0f, 18.0f, -5.0f);
-        if (GameManager.SceneCount != 8)
+        if (GameManager.GameCount != 8)
         {
             Destroy(gameObject);
         }

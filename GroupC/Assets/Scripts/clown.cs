@@ -31,7 +31,7 @@ public class clown : MonoBehaviour
         Right.SetActive(false);
         Back.SetActive(false);
         transform.position = new Vector3(-22.0f, 18.0f, -5.0f);
-        if (GameManager.SceneCount != 7)
+        if (GameManager.GameCount != 7)
         {
             Destroy(gameObject);
         }

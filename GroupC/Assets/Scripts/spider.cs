@@ -31,7 +31,7 @@ public class spider : MonoBehaviour
         Right.SetActive(false);
         Back.SetActive(false);
         transform.position = new Vector3(-22.0f, 18.0f, -5.0f);
-        if (GameManager.SceneCount != 2)
+        if (GameManager.GameCount != 2)
         {
             Destroy(gameObject);
         }

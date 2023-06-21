@@ -31,7 +31,7 @@ public class ZombieController : MonoBehaviour
         Right.SetActive(false);
         Back.SetActive(false);
         transform.position = new Vector3(-22.0f, 18.0f, -5.0f);
-        if (GameManager.SceneCount != 4 && GameManager.SceneCount != 5 && GameManager.SceneCount != 9)
+        if (GameManager.GameCount != 4 && GameManager.GameCount != 5 && GameManager.GameCount != 9)
         {
             Destroy(gameObject);
         }
