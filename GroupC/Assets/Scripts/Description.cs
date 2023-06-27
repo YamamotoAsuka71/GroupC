@@ -38,7 +38,15 @@ public class Description : MonoBehaviour
             timer2 += Time.deltaTime;
             if (timer2 > 1.0f)
             {
-                SceneManager.LoadScene("Main3d");
+                if (GameManager.PlayCount >= 6)
+                {
+                    SceneManager.LoadScene("Title");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Main3d");
+                }
+                
             }
         }
     }
