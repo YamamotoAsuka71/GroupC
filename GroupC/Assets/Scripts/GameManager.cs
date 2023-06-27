@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static int GameCount = 5;
     public static int SceneCount = 5;
-    public static int PlayCount = 1;
+    public static int PlayCount = 0;
     // Start is called before the first frame update
     void Start()
     {
