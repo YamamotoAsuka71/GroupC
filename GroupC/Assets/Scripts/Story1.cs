@@ -8,16 +8,16 @@ public class Story1 : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        textbox.text = "衝撃";
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        textbox.text = "アンパンマン";
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
         yield return null;
 
-        textbox.text = "撃滅のセカンドブリット";
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        textbox.text = "カレーパンマン";
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
         yield return null;
 
-        textbox.text = "撃滅";
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        textbox.text = "食パンマン";
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
         yield return null;
     }
 
