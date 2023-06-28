@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class ZombieController : MonoBehaviour
+public class cthulhuLike : MonoBehaviour
 {
     [SerializeField] saigo saigo;
     [SerializeField] charactercontrol charactercontrol;
@@ -31,7 +30,7 @@ public class ZombieController : MonoBehaviour
         Right.SetActive(false);
         Back.SetActive(false);
         transform.position = new Vector3(-22.0f, 18.0f, -5.0f);
-        if (GameManager.GameCount != 4 && GameManager.GameCount != 5)
+        if (GameManager.GameCount != 9)
         {
             Destroy(gameObject);
         }
