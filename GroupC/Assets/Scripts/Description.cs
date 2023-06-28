@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Description : MonoBehaviour
 {
+    [SerializeField] Story1 story;
     float timer = 0.0f;
     float timer2 = 0.0f;
     Animator animator;
@@ -28,7 +29,7 @@ public class Description : MonoBehaviour
         if (timer > 1.0f)
         {
             animator.SetBool("SAISYO", false);
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (story.scenarios.Length == story.currentLine && Input.GetKeyDown(KeyCode.Return))
             {
                 flag = true;
             }

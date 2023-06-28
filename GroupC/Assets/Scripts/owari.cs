@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class owari : MonoBehaviour
 {
+    
     [SerializeField] Description Description;
     Animator animator;
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class owari : MonoBehaviour
     {
         if (Description.flag == true)
         {
+
             animator.SetBool("OWARI", true);
         }
     }
