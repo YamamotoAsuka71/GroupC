@@ -10,13 +10,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (StartManager.flag == false)
-        {
-            GameCount = 5;
-            SceneCount = 5;
-            PlayCount = 0;
-            StartManager.flag = true;
-        }
+        StartManager.flag = true;
         SceneCount = GameCount;
     }
 

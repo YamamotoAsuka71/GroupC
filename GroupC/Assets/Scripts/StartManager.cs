@@ -8,12 +8,17 @@ public class StartManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flag = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (flag == true)
+        {
+            GameManager.PlayCount = 1;
+            GameManager.GameCount = 5;
+            GameManager.SceneCount = 5;
+        }
     }
 }
