@@ -542,6 +542,18 @@ PrefabInstance:
       propertyPath: uiText
       value: 
       objectReference: {fileID: 628141735}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[4]
+      value: "\u3048"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[5]
+      value: "\u3048"
+      objectReference: {fileID: 0}
     - target: {fileID: 7593577237850358558, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
       propertyPath: m_RootOrder
       value: 3
