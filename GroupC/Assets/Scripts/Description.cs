@@ -20,6 +20,46 @@ public class Description : MonoBehaviour
         GameManager.PlayCount++;
         animator = GetComponent<Animator>();
         animator.SetBool("SAISYO", true);
+
+        switch (GameManager.SceneCount)
+        {
+            case 1:
+                PlayerPrefs.SetInt("scene1", 1);
+                PlayerPrefs.Save();
+                break;
+            case 2:
+                PlayerPrefs.SetInt("scene2", 1);
+                PlayerPrefs.Save();
+                break;
+            case 3:
+                PlayerPrefs.SetInt("scene3", 1);
+                PlayerPrefs.Save();
+                break;
+            case 4:
+                PlayerPrefs.SetInt("scene4", 1);
+                PlayerPrefs.Save();
+                break;
+            case 5:
+                PlayerPrefs.SetInt("scene5", 1);
+                PlayerPrefs.Save();
+                break;
+            case 6:
+                PlayerPrefs.SetInt("scene6", 1);
+                PlayerPrefs.Save();
+                break;
+            case 7:
+                PlayerPrefs.SetInt("scene7", 1);
+                PlayerPrefs.Save();
+                break;
+            case 8:
+                PlayerPrefs.SetInt("scene8", 1);
+                PlayerPrefs.Save();
+                break;
+            case 9:
+                PlayerPrefs.SetInt("scene9", 1);
+                PlayerPrefs.Save();
+                break;
+        }
     }
 
     // Update is called once per frame
