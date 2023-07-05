@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GalleryGo : MonoBehaviour
+public class ShowPanel : MonoBehaviour
 {
+    public GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
-        
+        panel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -17,16 +17,12 @@ public class GalleryGo : MonoBehaviour
         
     }
 
-    public void OnClick1()
+    public void OnClick()
     {
-        SceneManager.LoadScene("Gallery");
+        panel.SetActive(true);
     }
     public void OnClick2()
     {
-        for (int i = 0; i < 9; i++)
-        {
-            GalleryManager.picture[i] = false;
-        }
-        SceneManager.LoadScene("Title");
+        panel.SetActive(false);
     }
 }
