@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2831233556342540845, guid: b47b3237d0e682644a73408a8e6b581b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 2831233556625652283, guid: b47b3237d0e682644a73408a8e6b581b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -402,6 +406,58 @@ PrefabInstance:
       propertyPath: uiText
       value: 
       objectReference: {fileID: 38229727}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[0]
+      value: "\u76EE\u304C\u899A\u3081\u305F\u3002\u6C17\u5473\u306E\u60AA \u3044\u76EE\u899A\u3081\u3060\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[1]
+      value: "\u3042\u306E\u5922\u306F \u4E00\u4F53\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[2]
+      value: "\u305D\u306E\u5239\u90A3\u3001\u79C1\u306F\u8EAB\u9707\u3044 \u3057\u305F\u3002\u9055\u548C\u611F\u3092\u611F\u3058\u308B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[3]
+      value: "\u306E\u3060\u3002\u81EA\u5206\u304C\u81EA\u5206\u3067\u306A \u3044\u3088\u3046\u306A\u3001\u81EA\u6211\u306E\u30B2\u30B7 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[4]
+      value: "\u30E5\u30BF\u30EB\u30C8\u5D29\u58CA\u3092\u8D77\u3053\u3057 \u3066\u3044\u305F\u3002\u547C\u5438\u304C\u4E71\u308C\u3001"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[5]
+      value: "\u904E\u547C\u5438\u6C17\u5473\u306B\u306A\u3063\u3066\u3044 \u304F\u306B\u3064\u308C\u3001\u81EA\u5DF1\u8A8D\u8B58\u306F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[6]
+      value: "\u3046\u3063\u3059\u3089\u3068\u306A\u3063\u3066\u3044\u304F \u3002\u300C\u79C1\u306F\u8AB0\uFF1F\u300D\u81EA\u5206\u3092 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[7]
+      value: "\u898B\u5931\u3044\u3001\u72C2\u3044\u306B\u72C2\u3063\u305F \u81EA\u6211\u3092\u81EA\u5206\u3067\u306F\u306A\u3044\u8AB0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[8]
+      value: "\u304B\u306B\u4EFB\u305B\u3066\u3044\u308B\u304B\u306E\u3088 \u3046\u306A\u885D\u52D5\u306B\u99C6\u3089\u308C\u308B\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[9]
+      value: "\u6642\u9593\u306F\u6570\u523B\u3001\u3051\u308C\u3069\u4F53 \u611F\u306F\u6570\u6642\u9593\u3002\u72C2\u3044\u306B\u72C2 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[10]
+      value: "\u3063\u305F\u81EA\u6211\u304C\u6025\u306B\u3075\u3063\u3068 \u6D88\u3048\u304B\u3051\u308B\u3002\u6C17\u304C\u4ED8\u3051"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593577237850358556, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
+      propertyPath: scenarios.Array.data[11]
+      value: "\u3070\u79C1\u306F\u5012\u308C\u3066\u3044\u305F\u3002\u6C17 \u3092\u5931\u3063\u3066\u3044\u305F\u306E\u3060\u3002"
+      objectReference: {fileID: 0}
     - target: {fileID: 7593577237850358558, guid: b863c60d6472dc84887a5ad1cfcd83c6, type: 3}
       propertyPath: m_RootOrder
       value: 4
